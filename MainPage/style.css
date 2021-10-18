@@ -1,0 +1,36 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.mainHat{
+    width: 100%;
+    height: 5vh;
+    background-color: blue;
+    border-bottom-left-radius: 2vh;
+    border-bottom-right-radius: 2vh;
+}
+.hatText{
+    color: white;
+    margin-left: calc(134.6vh/2);
+    padding-top: 1vh;
+}
+.mainNav{
+    display: flex;
+    margin-left: 62.5vh
+    
+}
+.mainNavObj{
+    color: white;
+    background-color: blue;
+    width: 20vh;
+    height: 5vh;
+    font-size: 2vh;
+}
+.navObj1{
+    border-bottom-left-radius: 2vh;
+    padding-left: 3vh;
+}
+.navObj3{
+    border-bottom-right-radius: 2vh;
+    padding-left: 3vh;
+}
