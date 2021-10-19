@@ -1,7 +1,7 @@
 *{
     margin: 0;
     padding: 0;
-    width: 100%;
+
     
 }
 .navShapka{
@@ -15,18 +15,14 @@
     color: white;
 }
 .ShapkaTxT{
-    /* margin-left: 61vh; */
-    /* padding-top: 0.5vh; */
-    text-align: center;
-    justify-content: center;
-    font-size: 28px;
+    margin-left: 61vh;
+    padding-top: 0.5vh;
+    font-size: 35px;
 }
 .navigation{
     display: flex;
-    /* margin-left: calc(111.5vh / 2); */
-    width: 100%;
     justify-content: center;
-    
+    align-items: center;
 }
 .navObj{
     background-color: rgb(29, 29, 214);
@@ -51,16 +47,18 @@
     border-bottom-right-radius: 2vh;
     width: 15vh;
 }
-
+.main{
+    width: 100%;
+    height: 100vh;
+}
 .newsMainDiv{
-   
-    text-align: center;
-    margin: 0 30vh 0 72vh;
-  
-    
+    width: 80vh;
+    height: 100vh;
+    margin-left: auto;
+    margin-right: auto;
 }
 .newsObj{
-    width: 60vh;
+    width: 80vh;
     height: 30vh;
     border-radius: 3vh;
     border-color: #8DA6FF;
