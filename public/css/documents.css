@@ -2,7 +2,10 @@
     margin: 0;
     padding: 0;
 }
-
+a {
+    text-decoration: none;
+    color: white;
+}
 html {
     background-color: rgb(246, 245, 255);
     font-family: Helvetica,Arial,sans-serif;

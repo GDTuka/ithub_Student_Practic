@@ -3,6 +3,10 @@
     padding: 0;
     
 }
+a {
+    text-decoration: none;
+    color: white;
+}
 html {
     background-color: rgb(246, 245, 255);
     font-family: Helvetica,Arial,sans-serif;
@@ -29,7 +33,7 @@ html {
     display: flex;
     justify-content: center;
     align-items: center;
-    
+    text-decoration: none;
 }
 .navObj{
     background-color: #123c8b;
@@ -37,11 +41,13 @@ html {
     font-size: 2vh;
     padding-top: 1.8vh;
     padding-left: 4vh;
-    color: white;
+    text-decoration: none;
+     color: white;
 }
 .navObj1{
     border-bottom-left-radius: 2vh;
     width: 15vh;
+    
     
 }
 .navObj2{
@@ -90,4 +96,3 @@ html {
     margin-left: 1vh;
     margin-top: 1vh;
 }
-
