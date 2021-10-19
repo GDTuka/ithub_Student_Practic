@@ -9,7 +9,6 @@
   "devDependencies": {},
   "scripts": {
     "watch": "nodemon ./index.js"
-    
   },
   "repository": {
     "type": "git",
