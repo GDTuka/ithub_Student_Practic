@@ -15,10 +15,12 @@
 .ShapkaTxT{
     margin-left: 61vh;
     padding-top: 0.5vh;
+    font-size: 35px;
 }
 .navigation{
     display: flex;
-    margin-left: calc(111.5vh / 2)
+    justify-content: center;
+    align-items: center;
 }
 .navObj{
     background-color: blue;
