@@ -1,0 +1,70 @@
+footer {
+    background-color: #5454ff;
+    position: fixed;
+    width: 100%;
+    height: 30vh;
+    left: 0; bottom: 0;
+    
+
+   }
+
+.fotterObjOne {
+    font-size: 20px;
+    padding-top: 3vh;
+    padding-left: 15vh;
+    color: #C0C0C0;
+    word-spacing: 30vh;
+}
+
+.fotterInfo {
+    font-size: 17px;
+    padding-top: 1vh;
+    padding-left: 15vh;
+    color: white;
+}
+.fotterLi {
+    list-style-type: none;
+    margin-bottom: 2vh;
+}
+
+.fotterSpisok {
+    margin-left: 0;
+    padding-left: 0;
+    float: left;
+    padding-right: 17vh;
+}
+
+.fotterLink {
+    color: white;
+    text-decoration:none;
+    
+  }
+
+.fotterLink:hover {
+    color: gray;}
+
+.fotterPoloska {
+    height: 20vh;
+    width: 1px;
+    background-color: #C0C0C0;
+    position: absolute;
+    margin-left: 160vh;
+    margin-bottom: 50vh ;
+}
+
+.fotterText {
+    display: flex;
+}
+
+.fotterPhone {
+    padding-top: 3vh;
+    padding-left: 97vh;
+    color: #C0C0C0;
+    font-size: 20px;
+}
+
+/* .fotterPodvalNiz {
+    width: 100%;
+    height: 5vh;
+    background-color: #C0C0C0;
+} Нижняя полоска */
