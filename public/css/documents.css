@@ -2,61 +2,24 @@
     margin: 0;
     padding: 0;
 }
-a {
-    text-decoration: none;
+a{ 
+    text-decoration: none; 
     color: white;
-}
+} 
 html {
     background-color: rgb(246, 245, 255);
     font-family: Helvetica,Arial,sans-serif;
-}
-.navShapka{
-    width: 100%;
-    height: 10vh;
-    margin-bottom: 10vh;
-}
-.Shapka{
-    width: 100%;
-    height: 7vh;
-    background-color:#013085;
-}
-.ShapkaTxT{
-    padding-top: 0.5vh;
-    font-size: 26px;
-    text-align: center;
-    color: rgb(255, 255, 255);
-}
-.navigation{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.navObj{
-    background-color: #123c8b;
-    height: 4.5vh;
-    font-size: 2vh;
-    padding-top: 1.8vh;
-    padding-left: 4vh;
-    color: white;
-}
-.navObj1{
-    border-bottom-left-radius: 2vh;
-    width: 15vh;
-}
-.navObj2{
-    width: 15vh;
-}
-.navObj3{
-    width: 10vh;
-}
-.navObj4{
-    border-bottom-right-radius: 2vh;
-    width: 15vh;
 }
 .main{
     width: 100%;
     height: 470vh;
     background-color: #eee;
+}
+.SingIn{
+    text-align: end;
+    margin-right: 2vh;
+    font-size: 2vh;
+    color: white;
 }
 .objPlace{
     width: 160vh;

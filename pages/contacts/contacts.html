@@ -5,26 +5,102 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/fotter.css">
-    <title>Document</title>
+    <link rel="stylesheet" href="css/documents.css">
+    <link rel="stylesheet" href="css/contacts.css">
+    <title>Contacts</title>
+    <script src="https://api-maps.yandex.ru/2.1/?apikey=71dbf173-f7df-4223-98c9-1ae5b874c7a5
+    &lang=ru_RU" type="text/javascript"></script>
+    <script type="text/javascript">        
+        ymaps.ready(function () {    
+    var myMap = new ymaps.Map('map', {
+            center: [55.744591, 37.643624],
+            zoom: 18,            
+            controls: []
+        }),
+        myPlacemarkWithContent = new ymaps.Placemark([55.744591, 37.643624], {
+                                    
+        }, {            
+            iconLayout: 'default#imageWithContent',            
+            iconImageHref: 'images/flag.png',            
+            iconImageSize: [48, 48],            
+            iconImageOffset: [-24, -24],           
+            
+        }),
+        myPlacemarkWithContent = new ymaps.Placemark([55.696879, 37.909444], {
+            hintContent: 'Моя аватарка'                        
+        }, {            
+            iconLayout: 'default#imageWithContent',            
+            iconImageHref: 'images/flag.png',            
+            iconImageSize: [48, 48],            
+            iconImageOffset: [-24, -24],           
+            
+        })
+        
+        myMap.geoObjects.add(myPlacemarkWithContent);    
+        myMap.geoObjects.add(myCircle);
+    });
+    </script>
 </head>
 <body>
+    <div class="navShapka">
+        <div class="Shapka">
+            <div class="ShapkaTxT">
+                Совет Профессиональных квалификаций
+            </div>
+            <div class="SingIn">
+                <a href="/Login" id="SingIn">Войти</a>
+            </div>
+        </div>
+        <div class="navigation">
+            <div class="navObj navObj1"><a href="/kval">Квалификации</a></div>
+            <div class="navObj navObj2"><a href="/documents">Документы</a></div>
+            <div class="navObj navObj3"><a href="/">Новости</a></div>
+            <div class="navObj navObj4"><a href="/contacts">Контакты</a></div>
+        </div>
+    </div>
 
 
 
+    <h1 class="title">Контакты</h1>
+    <div class="container">
+        <div id="map" style="width: 1000px; height: 500px"></div>
+        <h6 class="podTitle">Адресс для корреспонденции:</h6>
+        <p class="hyperLink"><img src="images/mapsmark_89134.svg"><a href="https://yandex.ru/maps/org/natsionalnoye_agentstvo_razvitiya_kvalifikatsii/208025168704/?from=tabbar&ll=37.643682%2C55.744540&mode=search&sctx=ZAAAAAgCEAAaKAoSCdp1b0Vi0kJAEdnts8pM30tAEhIJNHh8WH9ttD8RIq629DL%2Fpj8iBQABAgQFKAowADiAuuH6l5atg%2BkBQNutB0gBVc3MzD5YAGoCcnVwAJ0BzcxMPaABAKgBAA%3D%3D&sll=37.643682%2C55.744540&sspn=0.003846%2C0.001250&text=109240%2C%20%D0%9C%D0%BE%D1%81%D0%BA%D0%B2%D0%B0%2C%20%D0%9A%D0%BE%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B0%D1%8F%20%D0%BD%D0%B0%D0%B1%D0%B5%D1%80%D0%B5%D0%B6%D0%BD%D0%B0%D1%8F%20%D0%B4.17%20%28%D0%92%20%D0%A0%D0%A1%D0%9F%D0%9F%20%D0%B4%D0%BB%D1%8F%20%D0%90%D0%9D%D0%9E%20%C2%AB%D0%9D%D0%90%D0%A0%D0%9A%C2%BB%29&z=19" class="navLink">109240, Москва, Котельническая набережная д.17(В РСПП для АНО «НАРК»)</a></p>
+        <div class="grid">
+            <div class="mailFirst">
+                <h6 class="podTitle">E-mail:</h6>
+                <p class="hyperLink"><img src="images/mail-black-envelope-symbol_icon-icons.com_56519.svg"><a href="mailto:nok-nark@nark.ru" class="navLink">nok-nark@nark.ru</a></p>
+            </div>
+            <div class="mailSecond">
+                <h6 class="podTitle">Пресс-служба:</h6>
+                <p class="hyperLink"><img src="images/mail-black-envelope-symbol_icon-icons.com_56519.svg"><a href="mailto:pr@nark.ru" class="navLink">pr@nark.ru</a></p>
+            </div>
+            <div class="phone">
+                <h6 class="podTitle">Телефон:</h6>
+                <p class="hyperLink"><img src="images/phone-call-auricular-symbol-in-black_icon-icons.com_56483.svg"><a href="tel:+74959661686" class="navLink">+7 (495) 966-16-86 <span class="inactive"></a>(доб. 1019 или 1026)</span></p>
+            </div>
+        </div>
 
+<<<<<<< HEAD
+=======
+    </div>
+>>>>>>> e00f8c436024a0af546d51c467cd75894d097699
     
 
 
 
 
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> e00f8c436024a0af546d51c467cd75894d097699
     <footer>
         <div>
                 <div class="fotterText">
                     <div class="fotterObjOne">
                         УСЛУГИ
-                        РЕЕСТРЫ
-                        
+                        РЕЕСТРЫ                        
                     </div>
                     <div class="fotterPhone">
                         СЛУЖБА ПОДДЕРЖКИ
@@ -32,7 +108,7 @@
                 </div>
                     <div class="fotterInfo">
                     <ul class="fotterSpisok">
-                            <li class="fotterLi"><a href="______" class="fotterLink">Проверить свидетельство</a></li>
+                        <li class="fotterLi"><a href="______" class="fotterLink">Проверить свидетельство</a></li>
                         <li class="fotterLi"><a href="______" class="fotterLink">Подать апеляцию</a></li>
                         <li class="fotterLi"><a href="______" class="fotterLink">Места проведения<br>независимой оценки<br>квалификаций</a></li>
                     </ul>
@@ -55,5 +131,9 @@
 
         </div>
     </footer>
+    <script>
+
+    </script>
 </body>
 </html>
+    

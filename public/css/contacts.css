@@ -1,0 +1,37 @@
+a {
+    /* color: blue; */
+    margin-left: 12px;
+}
+.SingIn{
+    text-align: end;
+    margin-right: 2vh;
+    font-size: 2vh;
+    color: white;
+}
+.title {
+    margin-left: 23%;
+    color: #0e0e7d;
+    margin-bottom: 20px;
+}
+
+.container {
+    width: 1000px;
+    height: 750px;
+    margin-left: 23%;    
+}
+
+.podTitle {
+    font-size: 15px;
+    color: #808080;
+    margin-top: 20px;
+    margin-bottom: 12px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 200px 200px 400px;
+}
+
+.navLink {
+    color: #1919e6;
+}
