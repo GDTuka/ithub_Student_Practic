@@ -7,7 +7,7 @@ footer {
    }
 
 .fotterObjOne {
-    font-size: 20px;
+    font-size: 2.6vh;
     padding-top: 3vh;
     padding-left: 15vh;
     
@@ -16,7 +16,7 @@ footer {
 }
 
 .fotterInfo {
-    font-size: 17px;
+    font-size: 2.2vh;
     padding-top: 1vh;
     padding-left: 15vh;
     color: white;

@@ -11,6 +11,6 @@ app.use(express.static(__dirname +'/public'))
 
 app.use("/api", require('./data/api'))
 
-app.listen(6148,function(){
+app.listen(5000,function(){
     console.log('server is alive')
 })
