@@ -1,6 +1,7 @@
 
 const mainNewsElem = document.getElementById("mainNewsElem")
 const newsObjLast = document.getElementById('newsObjElem')
+const singInDiv = document.getElementById("SingIn")
 
 function makewNewNews(zagTxt,newsTxT){
 
@@ -24,6 +25,13 @@ function makewNewNews(zagTxt,newsTxT){
 
     console.log(newsTxTdiv)
 }
+function isSingIn(){
+    // Проверка на то вошёл пользователь или нет будет добавлена позже пока просто переход на страницу логина
+
+    singInDiv.innerHTML += "Войти"
+
+}
+isSingIn()
 makewNewNews('Заголовок' ,"Новостной текст1")
 makewNewNews('Заголовок' ,"Новостной текст2")
 makewNewNews('Заголовок' ,"Новостной текст3")

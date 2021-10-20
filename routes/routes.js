@@ -13,5 +13,10 @@ router.get('/contacts',(req,res)=>{
 router.get('/kval',(req,res)=>{
     res.sendFile(path.join(path.dirname(__dirname))+ "/pages/kval/kval.html");
 })
-
+router.get('/Login',(req,res)=>{
+    res.sendFile(path.join(path.dirname(__dirname))+ "/pages/login/login.html");
+})
+router.get('/Register',(req,res)=>{
+    res.sendFile(path.join(path.dirname(__dirname))+ "/pages/register/register.html");
+})
 module.exports = router

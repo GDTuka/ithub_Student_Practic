@@ -2,7 +2,12 @@ a {
     /* color: blue; */
     margin-left: 12px;
 }
-
+.SingIn{
+    text-align: end;
+    margin-right: 2vh;
+    font-size: 2vh;
+    color: white;
+}
 .title {
     margin-left: 23%;
     color: #0e0e7d;

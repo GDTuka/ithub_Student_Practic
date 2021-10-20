@@ -58,6 +58,12 @@ html {
     height: 470vh;
     background-color: #eee;
 }
+.SingIn{
+    text-align: end;
+    margin-right: 2vh;
+    font-size: 2vh;
+    color: white;
+}
 .objPlace{
     width: 160vh;
     height: 200vh;
