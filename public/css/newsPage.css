@@ -23,6 +23,12 @@ html {
     
     
 }
+.SingIn{
+    text-align: end;
+    margin-right: 2vh;
+    font-size: 2vh;
+    color: white;
+}
 .ShapkaTxT{   
     padding-top: 0.5vh;
     font-size: 26px;

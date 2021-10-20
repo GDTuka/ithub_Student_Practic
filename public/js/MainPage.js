@@ -24,6 +24,12 @@ function makewNewNews(zagTxt,newsTxT){
 
     console.log(newsTxTdiv)
 }
+function isSingIn(){
+    // Проверка на то вошёл пользователь или нет будет добавлена позже пока просто переход на страницу логина
+
+    let SingInobj = document.createElement('div')
+    
+}
 makewNewNews('Заголовок' ,"Новостной текст1")
 makewNewNews('Заголовок' ,"Новостной текст2")
 makewNewNews('Заголовок' ,"Новостной текст3")
