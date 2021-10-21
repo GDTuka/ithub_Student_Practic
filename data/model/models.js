@@ -1,9 +1,9 @@
 const db = require('../api/dbGoose')
 
 const UserSchema = new db.Schema({
-    login: String,
-    password: String,
-    mail: String,
+    login: {type: String, required: true,unique:true},
+    password: {type: String, required: true},
+    mail: {type: String, required: true,unique:true},
     admin: Boolean,
     teacher: Boolean,
     junAdmin: Boolean,
@@ -16,7 +16,6 @@ const newNewsSchema = new db.Schema({
     date: Date,
     author: String
 })
-
 const User = db.model('User',UserSchema)
 const News = db.model('News',newNewsSchema)
 

@@ -6,7 +6,8 @@ function connectDB() {
     const uri = `mongodb+srv://Tuka:${pwd}@cluster0.8azro.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`
     return new MongoClient(uri, {
         useNewUrlParser: true,
-        useUnifiedTopology: true
+        useUnifiedTopology: true,
+        useCreateIndex:true
     })
 }
 
