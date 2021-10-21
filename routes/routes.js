@@ -19,4 +19,10 @@ router.get('/Login',(req,res)=>{
 router.get('/Register',(req,res)=>{
     res.sendFile(path.join(path.dirname(__dirname))+ "/pages/register/register.html");
 })
+router.get('/addNewsAdmin',(req,res)=>{
+    res.sendFile(path.join(path.dirname(__dirname))+ "/pages/addNewsAdmin/addNewsAdmin.html");
+})
+router.get('/addMaterialAdmin',(req,res)=>{
+    res.sendFile(path.join(path.dirname(__dirname))+ "/pages/addMaterialAdmin/addMaterialAdmin.html");
+})
 module.exports = router
