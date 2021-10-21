@@ -17,9 +17,11 @@ html {
 }
 .SingIn{
     text-align: end;
-    margin-right: 2vh;
-    font-size: 2vh;
+    margin-right: 10vh;
+    
+    font-size: 2.5vh;
     color: white;
+    margin-top: -3.3vh;
 }
 .objPlace{
     width: 160vh;
