@@ -18,5 +18,6 @@ const newNewsSchema = new db.Schema({
 })
 
 const User = db.model('User',UserSchema)
+const News = db.model('News',newNewsSchema)
 
 module.exports = User
