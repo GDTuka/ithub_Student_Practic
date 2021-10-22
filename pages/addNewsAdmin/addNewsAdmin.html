@@ -1,17 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>login</title>
-    <link rel="stylesheet" href="css/login.css">
-    <link rel="stylesheet" href="css/shapka.css">
     <link rel="stylesheet" href="css/fotter.css">
-    <link rel="stylesheet" href="css/newsPage.css">
+    <link rel="stylesheet" href="css/shapka.css">
+    <link rel="stylesheet" href="css/addNewsAdmin.css">
+    <title>Document</title>
 </head>
-
 <body>
     <div class="navShapka">
         <div class="Shapka">
@@ -29,26 +26,27 @@
             <div class="navObj navObj4"><a href="/contacts">Контакты</a></div>
         </div>
     </div>
-<div class="main">
-    <div class="registration-cssave">
-        <form method="post" action="/api">
-            <h3 class="text-center">Авторизация</h3>
-            <div class="form-group">
-                <input class="form-control item" type="email" name="mail" id="email" placeholder="Email" required>
-            </div>
-            <div class="form-group">
-                <input class="form-control item" type="password" name="password" minlength="6" id="password" placeholder="Пароль" required>
-            </div>
-            <div class="form-group">
-                <button class="btn btn-primary btn-block create-account" type="submit">Вход</button>
-            </div>
-            <div class="loginRegDiv">
-                <a href="/register" class="loginReg">Зарегестрироваться</a>
-            </div>
-        </form>
+
+
+    <div class="main">
+        <div class="form-cssave debug">
+            <form method="post" action="/api/news/write">
+                <h3 class="text-center">Создание Новости</h3>
+                <div class="form-group">
+                    <input class="form-control1 item" type="text" name="newsZag" id="text" placeholder="Заголовок" required>
+                </div>
+                <div class="form-group">
+                    <input class="form-control1 item" type="text" name="newsTxT" id="text" placeholder="Заголовок" required>
+                </div>
+                <div class="form-group">
+                    <button class="btn btn-primary btn-block create" type="submit">Создать</button>
+                </div>
+            </form>
+        </div>
     </div>
-</div>
-    <footer>    
+
+
+    <footer>
         <div>
                 <div class="fotterText">
                     <div class="fotterObjOne">
@@ -82,12 +80,9 @@
                     </ul>
                 </div>
         <div class="fotterPodvalNiz">
+
+        </div>
     </footer>
-
-    <script src="js/login.js">
-
-
-    </script>
+    <script src="js/addNewsAdmin.js"></script>
 </body>
-
 </html>

@@ -26,8 +26,6 @@ const validateToken = (req,res,next) =>{
 const getData = (req,res,next)=>{
     const accessToken = req.cookies["token"] 
     const validtoken = verify(accessToken,"jwt-secret")
-    
-    console.log(getcookie())
 
     function getcookie (){
         let cookie = req.headers.cookie

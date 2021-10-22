@@ -51,11 +51,17 @@ html {
     margin-top: -3.3vh;
 }
 .buttonNewNews{
-    width: 50vh;
-    height: 5vh;
-    background-color: blue;
+    width: 40vh;
+    height: 2.7vh;
+    background-color: #6c9acf;
     color: white;
     margin-left: auto;
     margin-right: auto;
     margin-top: 10vh;
+    border-radius: 2vh;
+    text-align: center;
+    font-weight:700;
+    border: none;
+    padding:2.2vh ;
+    font-size: 2.6vh;
 }

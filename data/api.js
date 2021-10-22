@@ -7,8 +7,8 @@ const {createToken,validateToken,getData} = require('./jwt')
 const bcrypt = require('bcrypt')
 
 
-router.get("/data",getData, async (req, res) => {
-    res.json({shit : '1234'})
+router.get("/data", async (req, res) => {
+    res.json({mesg:"ok"})
 });
 
 router.post('/',async (req,res)=>{
@@ -46,14 +46,15 @@ router.post('/register',async (req,res)=>{
     })
     res.redirect('/login')
 })
-router.post('/news',async(req,res)=>{
-    const data = await News.find({})
+router.get('/news',async(req,res)=>{
+    let data = await News.find({})
     res.json(data)
 })
 router.post('/news/write', async(req,res)=>{
     const {newsTxT, newsZag} = req.body
-    await News({newsTxt:newsTxt,newsZag:newsZag})
-    res.redirect('/')
+    console.log(req.body)
+    await News({newsTxT:newsTxT,newsZag:newsZag}).save()
+    res.redirect('/addNewsAdmin')
 })
 
 
