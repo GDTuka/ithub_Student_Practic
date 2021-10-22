@@ -30,13 +30,13 @@
 
     <div class="main">
         <div class="form-cssave debug">
-            <form>
+            <form method="post" action="/api/news/write">
                 <h3 class="text-center">Создание Новости</h3>
                 <div class="form-group">
-                    <input class="form-control1 item" type="text" name="text" id="text" placeholder="Заголовок" required>
+                    <input class="form-control1 item" type="text" name="newsZag" id="text" placeholder="Заголовок" required>
                 </div>
                 <div class="form-group">
-                    <textarea class="form-control item" rows="4" cols="50"></textarea>
+                    <input class="form-control1 item" type="text" name="newsTxT" id="text" placeholder="Заголовок" required>
                 </div>
                 <div class="form-group">
                     <button class="btn btn-primary btn-block create" type="submit">Создать</button>
