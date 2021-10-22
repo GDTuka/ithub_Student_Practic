@@ -3,6 +3,7 @@ const mainNewsElem = document.getElementById("mainNewsElem")
 const newsObjLast = document.getElementById('newsObjElem')
 const singInDiv = document.getElementById("SingIn")
 const btn1 = document.getElementById('btn1')
+
 function makewNewNews(zagTxt,newsTxT){
 
     let newNewsObj = document.createElement('div')
@@ -53,10 +54,15 @@ btn1.addEventListener('click',e=>{
 function isSingIn(){
     // Проверка на то вошёл пользователь или нет будет добавлена позже пока просто переход на страницу логина
 
-    singInDiv.innerHTML += "Войти"
-
 }
-isSingIn()
+const take = async ()=>{
+    let res = await fetch('/api/data')
+    let data = await res.json()
+    console.log(data.shit)
+}
+take()
+
 makewNewNews('Заголовок' ,"Новостной текст1")
 makewNewNews('Заголовок' ,"Новостной текст2")
 makewNewNews('Заголовок' ,"Новостной текст3")
+isSingIn()

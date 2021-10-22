@@ -8,6 +8,7 @@ const UserSchema = new db.Schema({
     teacher: Boolean,
     junAdmin: Boolean,
     middleAdmin: Boolean,
+    kvalName:String
 })
 
 const newNewsSchema = new db.Schema({
@@ -19,4 +20,4 @@ const newNewsSchema = new db.Schema({
 const User = db.model('User',UserSchema)
 const News = db.model('News',newNewsSchema)
 
-module.exports = User
+module.exports = {User,News}
