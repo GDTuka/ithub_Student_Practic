@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const {User,News} = require("./model/models");
+const {User,News,Material,Test} = require("./model/models");
 const cockPars = require('cookie-parser')
 const {sign,verify} = require('jsonwebtoken')
 
@@ -62,7 +62,24 @@ router.post('/news/write', async(req,res)=>{
 })
 router.get('/logout',async(req,res) =>{
     res.clearCookie('token')
-    console.log('1234')
     res.redirect('/')
+})
+router.post('/Material/write',async(req,res) =>{
+    const {materialZag,materialTxT} = req.body
+    await  Material({materialZag:materialZag,materialTxT:materialTxT}).save()
+    res.redirect('/')
+})
+router.get('/material/get',async(req,res)=>{
+    let data = await Material.find({})
+    res.json(data)
+})
+router.post('/test/write',async(req,res)=>{
+    let {testName} = req.body
+    await Test({testName:testName}).save()
+    res.redirect('/')
+})
+router.get('/test/get',async(req,res)=>{
+    let data = await Test.find({})
+    res.json(data)
 })
 module.exports = router

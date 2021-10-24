@@ -3,7 +3,7 @@ const mainNewsElem = document.getElementById("mainNewsElem")
 const newsObjLast = document.getElementById('newsObjElem')
 const singInDiv = document.getElementById("SingIn")
 const btn1 = document.getElementById('btn1')
-
+const nav = document.getElementById('nav')
 
 
 let dataNews = [];
@@ -25,13 +25,47 @@ const takeUserLogin = async() =>{
     userData = await res.json()
     if(userData != null){
         singInDiv.innerHTML = userData.login
-        singInDiv.setAttribute('href','')
+        singInDiv.setAttribute('href','/profile')
+        ifUserAdmin(userData)
     }
 }
 
 takeUserLogin()
 
+function ifUserAdmin(userData){
+    console.log('123441')
+    if(userData.admin == true){
+        let newDiv = document.createElement('div')
+        let newHref = document.createElement('a')
 
+        let newDiv2 = document.createElement('div')
+        let newHref2 = document.createElement('a')
+
+        let newDiv3 = document.createElement('div')
+        let newHref3 = document.createElement('a')
+
+
+        newHref2.setAttribute('href','/addMaterialAdmin')
+        newDiv2.setAttribute('class','navObj')
+
+        newHref.setAttribute('href','/addNewsAdmin')
+        newDiv.setAttribute('class','navObj')
+
+        newHref.innerHTML += "Добавить Новость"
+        newHref2.innerHTML += "Добавить Изучение"
+        newHref3.innerHTML += "Добавить Тест"
+        
+        newHref3.setAttribute('href','/addTest')
+        newDiv3.setAttribute('class','navObj')
+
+        newDiv2.append(newHref2)
+        newDiv.append(newHref)
+        newDiv3.append(newHref3)
+        nav.append(newDiv)
+        nav.append(newDiv2)
+        nav.append(newDiv3)
+    }
+}
 
 function addNews(){
     console.log("делаю новости")
