@@ -1,14 +1,18 @@
 const router = require("express").Router();
 const {User,News} = require("./model/models");
 const cockPars = require('cookie-parser')
+const {sign,verify} = require('jsonwebtoken')
 
 const {createToken,validateToken,getData} = require('./jwt')
 
 const bcrypt = require('bcrypt')
 
 
-router.get("/data", async (req, res) => {
-    res.json({mesg:"ok"})
+router.get("/data",async (req, res) => {
+    const accessToken = req.cookies["token"] 
+    const validtoken = verify(accessToken,"jwt-secret")
+    const user = await User.findOne({mail:validtoken.mail})
+    res.send(user)
 });
 
 router.post('/',async (req,res)=>{
@@ -56,6 +60,9 @@ router.post('/news/write', async(req,res)=>{
     await News({newsTxT:newsTxT,newsZag:newsZag}).save()
     res.redirect('/addNewsAdmin')
 })
-
-
+router.get('/logout',async(req,res) =>{
+    res.clearCookie('token')
+    console.log('1234')
+    res.redirect('/')
+})
 module.exports = router
