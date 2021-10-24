@@ -1,8 +1,8 @@
 const {sign,verify} = require('jsonwebtoken')
-
+const {User,News} = require("./model/models");
 
 const createToken = (user) =>{
-    const accessToken = sign({login: user.login, isAdmin:user.idAdmin,id:user.id},"jwt-secret")
+    const accessToken = sign({mail:user.mail},"jwt-secret")
     return accessToken
 }
 
@@ -23,14 +23,7 @@ const validateToken = (req,res,next) =>{
         }
     }
 }
-const getData = (req,res,next)=>{
-    const accessToken = req.cookies["token"] 
-    const validtoken = verify(accessToken,"jwt-secret")
-
-    function getcookie (){
-        let cookie = req.headers.cookie
-        return cookie.split('; ')
-    } 
+const getData = async (req,res,next)=>{
     
     return next()
 }

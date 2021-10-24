@@ -5,4 +5,10 @@ function isSingIn(){
     singInDiv.innerHTML += "Войти"
 
 }
+
+function makeNewCompleteTest(){
+    // создать элемет
+    // присвоить ему классы 
+    // загрузить эелемент внутрь 
+}
 isSingIn()

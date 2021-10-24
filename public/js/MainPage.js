@@ -5,49 +5,43 @@ const singInDiv = document.getElementById("SingIn")
 const btn1 = document.getElementById('btn1')
 
 
-let dataNews = [];
-let length = 6
-let i = 3
 
-const take = async() =>{
+let dataNews = [];
+let userData = []
+let length = 3
+let i = 0
+
+const takeNews = async() =>{
     let res = await fetch('/api/news')
     dataNews = await res.json()
+    if (dataNews != null){
+        addNews()
+    }
 }
-take()
-
-btn1.addEventListener('click',e=>{
-    console.log('1234')
-})
-function makewNewNews(zagTxt,newsTxT){
-    console.log("Пытаюсь сделать новость")
-    let newNewsObj = document.createElement('div')
-    let zagDiv = document.createElement('div')
-    let newsTxTdiv = document.createElement('div')
-
-    zagDiv.innerHTML += zagTxt
-    newsTxTdiv.innerHTML += newsTxT
-
-    newNewsObj.setAttribute("class","newsObj")
-    zagDiv.setAttribute("class","newsZag")
-    newsTxTdiv.setAttribute("class","newsTxT")
-
-
-
-    newNewsObj.prepend(zagDiv)
-    newNewsObj.append(newsTxTdiv)
-
-    mainNewsElem.insertBefore(newNewsObj,btn1)
-
-    console.log(newsTxTdiv)
+takeNews()
+singInDiv.innerHTML += "войти"
+const takeUserLogin = async() =>{
+    let res = await fetch('/api/data')
+    userData = await res.json()
+    if(userData != null){
+        singInDiv.innerHTML = userData.login
+        singInDiv.setAttribute('href','')
+    }
 }
+
+takeUserLogin()
+
+
+
 function addNews(){
+    console.log("делаю новости")
     for(let j = 0; i<length;i++){
-        console.log(dataNews[i])
+        console.log(i)
         let newNewsObj = document.createElement('div')
         let zagDiv = document.createElement('div')
         let newsTxTdiv = document.createElement('div')
     
-        zagDiv.innerHTML += dataNews[i].zagTxT
+        zagDiv.innerHTML += dataNews[i].newsZag
         newsTxTdiv.innerHTML += dataNews[i].newsTxT
     
         newNewsObj.setAttribute("class","newsObj")
@@ -59,14 +53,8 @@ function addNews(){
     
         mainNewsElem.insertBefore(newNewsObj,btn1)
     }
-    i = 3+3;
     length = length +3; 
 }
 btn1.addEventListener('click',e=>{
-    console.log('1234')
     addNews()
 })
-function isSingIn(){
-    singInDiv.innerHTML += "Войти"
-}
-isSingIn()

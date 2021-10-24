@@ -4,10 +4,10 @@ const UserSchema = new db.Schema({
     login: {type: String, required: true,unique:true},
     password: {type: String, required: true},
     mail: {type: String, required: true,unique:true},
-    admin: Boolean,
-    teacher: Boolean,
-    junAdmin: Boolean,
-    middleAdmin: Boolean,
+    admin: {type: Boolean, default: false},
+    teacher: {type: Boolean, default: false},
+    junAdmin: {type: Boolean, default: false},
+    middleAdmin:{type: Boolean, default: false},
     kvalName:String
 })
 
