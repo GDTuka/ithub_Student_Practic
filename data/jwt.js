@@ -1,19 +1,26 @@
 const {sign,verify} = require('jsonwebtoken')
+const decoder = require('jwt-decode')
+var JWTR =  require('jwt-redis')
+
+
 
 
 const createToken = (user) =>{
-    const accessToken = sign({login: user.login, isAdmin:user.idAdmin,id:user.id},"jwt-secret")
+    const accessToken = sign({mail:user.mail},"")
     return accessToken
 }
-
+const destroyToken = (req,res,next) =>{
+    destroy(req.cookies['token'])
+}
 const validateToken = (req,res,next) =>{
     const accessToken = req.cookies["token"] 
     console.log(accessToken)
     if(accessToken){
         try {
-            const validtoken = verify(accessToken,"jwt-secret")
+            const validtoken = verify(accessToken,"")
             if(validtoken){
                 req.authenticated = true
+                res.json()
                 return next()
             } else{
                 return next()
@@ -24,14 +31,14 @@ const validateToken = (req,res,next) =>{
     }
 }
 const getData = (req,res,next)=>{
+
     const accessToken = req.cookies["token"] 
     const validtoken = verify(accessToken,"jwt-secret")
-
+    var decoded = decoder(accessToken)
+    console.log(validtoken)
     function getcookie (){
-        let cookie = req.headers.cookie
-        return cookie.split('; ')
+        req.cookies["token"] = null
     } 
-    
     return next()
 }
 

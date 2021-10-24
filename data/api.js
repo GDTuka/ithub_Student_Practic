@@ -7,17 +7,15 @@ const {createToken,validateToken,getData} = require('./jwt')
 const bcrypt = require('bcrypt')
 
 
-router.get("/data", async (req, res) => {
+router.get("/data",getData, async (req, res) => {
     res.json({mesg:"ok"})
 });
 
 router.post('/',async (req,res)=>{
     const {mail, password } = req.body
     const user = req.body
-    console.log(user)
-    const isUserExist = await User.findOne({mail:mail})
-    const UserPwdCorrect = isUserExist.password
-
+    console.log(user.password)
+    const isUserExist = await User.findOne({mail:mail,passwrod:password})
     if(!isUserExist){
         console.log('Логин гавно')
     } else{
@@ -49,6 +47,7 @@ router.post('/register',async (req,res)=>{
 router.get('/news',async(req,res)=>{
     let data = await News.find({})
     res.json(data)
+
 })
 router.post('/news/write', async(req,res)=>{
     const {newsTxT, newsZag} = req.body
@@ -56,6 +55,17 @@ router.post('/news/write', async(req,res)=>{
     await News({newsTxT:newsTxT,newsZag:newsZag}).save()
     res.redirect('/addNewsAdmin')
 })
-
+router.get('/someThink', function(req, res, next) {
+    if (req.session.views) {
+      req.session.views++
+      res.setHeader('Content-Type', 'text/html')
+      res.write('<p>views: ' + req.session.id + '</p>')
+      res.write('<p>expires in: ' + (req.session.cookie.maxAge / 1000) + 's</p>')
+      res.end()
+    } else {
+      
+      res.end('welcome to the session demo. refresh!')
+    }
+  })
 
 module.exports = router

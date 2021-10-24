@@ -6,17 +6,19 @@ const btn1 = document.getElementById('btn1')
 
 
 let dataNews = [];
-let length = 6
-let i = 3
-
+let length = 3
+let i = 0
+let sometestlet 
 const take = async() =>{
     let res = await fetch('/api/news')
     dataNews = await res.json()
+    sometestlet = dataNews[0].newsZag
 }
 take()
-
+console.log(sometestlet)
 btn1.addEventListener('click',e=>{
-    console.log('1234')
+    console.log('134')
+    addNews()
 })
 function makewNewNews(zagTxt,newsTxT){
     console.log("Пытаюсь сделать новость")
@@ -37,17 +39,14 @@ function makewNewNews(zagTxt,newsTxT){
     newNewsObj.append(newsTxTdiv)
 
     mainNewsElem.insertBefore(newNewsObj,btn1)
-
-    console.log(newsTxTdiv)
 }
 function addNews(){
     for(let j = 0; i<length;i++){
-        console.log(dataNews[i])
         let newNewsObj = document.createElement('div')
         let zagDiv = document.createElement('div')
         let newsTxTdiv = document.createElement('div')
     
-        zagDiv.innerHTML += dataNews[i].zagTxT
+        zagDiv.innerHTML += dataNews[i].newsZag
         newsTxTdiv.innerHTML += dataNews[i].newsTxT
     
         newNewsObj.setAttribute("class","newsObj")
@@ -59,13 +58,11 @@ function addNews(){
     
         mainNewsElem.insertBefore(newNewsObj,btn1)
     }
-    i = 3+3;
-    length = length +3; 
+    length=length+3
 }
-btn1.addEventListener('click',e=>{
-    console.log('1234')
+setTimeout(() => {
     addNews()
-})
+}, 1000);
 function isSingIn(){
     singInDiv.innerHTML += "Войти"
 }
