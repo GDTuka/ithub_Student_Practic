@@ -25,23 +25,32 @@ html {
 }
 .dataleft{
   margin-top: 10vh;
-  width: 40vh;
-  height: 20vh;
+  width: 60vh;
+  height: 8vh;
   border-radius: 1vh;
-  border-color: blue;
+  border-color: #89a3d8;
   border-width: 0.5vh;
   border-style: solid;
   margin-left: auto;
+  background-color: white;
   margin-right: auto;
+  text-align: center;
 }
 .dataright{
   margin-top: 10vh;
-  width: 40vh;
-  height: 20vh;
+  width: 60vh;
+  height: 8vh;
   border-radius: 1vh;
-  border-color: blue;
+  border-color: #89a3d8;
   border-width: 0.5vh;
   border-style: solid;
   margin-left: auto;
   margin-right: auto;
+  background-color: white;
+  text-align: center;
+}
+.goover {
+  color: black;
+  text-align: center;
+  
 }
