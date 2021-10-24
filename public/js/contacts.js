@@ -5,7 +5,7 @@ const takeUserLogin = async() =>{
     userData = await res.json()
     if(userData != null){
         singInDiv.innerHTML = userData.login
-        singInDiv.setAttribute('href','')
+        singInDiv.setAttribute('href','/profile')
     }
 }
 takeUserLogin()

@@ -17,7 +17,19 @@ const newNewsSchema = new db.Schema({
     date: Date,
     author: String
 })
+
+const newMaterial = new db.Schema({
+    materialZag: String,
+    materialTxT : String
+})
+
+const testModel = new db.Schema({
+    testName: String
+})
+
+const Material = db.model("Materil",newMaterial)
 const User = db.model('User',UserSchema)
 const News = db.model('News',newNewsSchema)
+const Test = db.model("Test",testModel)
 
-module.exports = {User,News}
+module.exports = {User,News,Material,Test}

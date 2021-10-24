@@ -34,4 +34,10 @@ router.get('/addMaterialAdmin',(req,res)=>{
 router.get('/profile',(req,res)=>{
     res.sendFile(path.join(path.dirname(__dirname))+ "/pages/profile/profile.html");
 })
+router.get('Material/learn',(req,res)=>{
+    res.sendFile(path.join(path.dirname(__dirname))+ "/pages/materialLenr/maretialLearn.html");
+})
+router.get('/addTest',(req,res)=>{
+    res.sendFile(path.join(path.dirname(__dirname))+ "/pages/addTest/addTest.html")
+})
 module.exports = router
