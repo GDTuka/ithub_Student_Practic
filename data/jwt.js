@@ -42,5 +42,6 @@ const getData = (req,res,next)=>{
     return next()
 }
 
+// не работало то , что я передевал в sign хуету конкретную, щас вроде исправил, дальше нужно оформить что-то вроде logout, чтобы ещё из сессии удалялся токен и тогда всё должно заработать полностью
 
 module.exports = {createToken,validateToken,getData}
