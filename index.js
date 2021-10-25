@@ -3,6 +3,7 @@ const app = express();
 var path = require('path');
 const parser = require('cookie-parser')
 const session = require('express-session')
+const port = 5000 || process.env.PORT;
 
 app.use(session({
     secret: 'jwt-secret',
@@ -19,6 +20,6 @@ app.use("/api", require('./data/api'))
 
 
 app.set('trust proxy', 1)
-app.listen(5000,function(){
+app.listen(port,function(){
     console.log('server is alive')
 })
