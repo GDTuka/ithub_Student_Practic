@@ -18,10 +18,8 @@ router.get("/data",async (req, res) => {
 router.post('/',async (req,res)=>{
     const {mail, password } = req.body
     const user = req.body
-    console.log(user)
-    const isUserExist = await User.findOne({mail:mail})
-    const UserPwdCorrect = isUserExist.password
-
+    console.log(user.password)
+    const isUserExist = await User.findOne({mail:mail,passwrod:password})
     if(!isUserExist){
         console.log('Логин гавно')
     } else{
@@ -53,6 +51,7 @@ router.post('/register',async (req,res)=>{
 router.get('/news',async(req,res)=>{
     let data = await News.find({})
     res.json(data)
+
 })
 router.post('/news/write', async(req,res)=>{
     const {newsTxT, newsZag} = req.body

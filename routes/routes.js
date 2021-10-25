@@ -22,7 +22,6 @@ router.get('/Login',getData,(req,res)=>{
     res.sendFile(path.join(path.dirname(__dirname))+ "/pages/login/login.html");
 })
 router.get('/Register',(req,res)=>{
-
     res.sendFile(path.join(path.dirname(__dirname))+ "/pages/register/register.html");
 })
 router.get('/addNewsAdmin',(req,res)=>{
