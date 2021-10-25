@@ -3,7 +3,7 @@ var path = require('path');
 
 const cockPars = require('cookie-parser')
 
-const {createToken,validateToken} = require('../data/jwt.js')
+const {createToken,validateToken,getData} = require('../data/jwt.js')
 
 router.get('/',(req, res) => {
     res.sendFile(path.join(path.dirname(__dirname))+ "/pages/newsPage/MainPage.html");
@@ -14,11 +14,11 @@ router.get('/documents',(req,res)=>{
 router.get('/contacts',(req,res)=>{
     res.sendFile(path.join(path.dirname(__dirname))+ "/pages/contacts/contacts.html");
 })
-router.get('/kval',validateToken,(req,res)=>{
+router.get('/kval',(req,res)=>{
 
     res.sendFile(path.join(path.dirname(__dirname))+ "/pages/kval/kval.html");
 })
-router.get('/Login',(req,res)=>{
+router.get('/Login',getData,(req,res)=>{
     res.sendFile(path.join(path.dirname(__dirname))+ "/pages/login/login.html");
 })
 router.get('/Register',(req,res)=>{
@@ -29,5 +29,14 @@ router.get('/addNewsAdmin',(req,res)=>{
 })
 router.get('/addMaterialAdmin',(req,res)=>{
     res.sendFile(path.join(path.dirname(__dirname))+ "/pages/addMaterialAdmin/addMaterialAdmin.html");
+})
+router.get('/profile',(req,res)=>{
+    res.sendFile(path.join(path.dirname(__dirname))+ "/pages/profile/profile.html");
+})
+router.get('Material/learn',(req,res)=>{
+    res.sendFile(path.join(path.dirname(__dirname))+ "/pages/materialLenr/maretialLearn.html");
+})
+router.get('/addTest',(req,res)=>{
+    res.sendFile(path.join(path.dirname(__dirname))+ "/pages/addTest/addTest.html")
 })
 module.exports = router

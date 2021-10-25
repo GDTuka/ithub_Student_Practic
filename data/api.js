@@ -1,14 +1,18 @@
 const router = require("express").Router();
-const {User,News} = require("./model/models");
+const {User,News,Material,Test} = require("./model/models");
 const cockPars = require('cookie-parser')
+const {sign,verify} = require('jsonwebtoken')
 
 const {createToken,validateToken,getData} = require('./jwt')
 
 const bcrypt = require('bcrypt')
 
 
-router.get("/data",getData, async (req, res) => {
-    res.json({mesg:"ok"})
+router.get("/data",async (req, res) => {
+    const accessToken = req.cookies["token"] 
+    const validtoken = verify(accessToken,"jwt-secret")
+    const user = await User.findOne({mail:validtoken.mail})
+    res.send(user)
 });
 
 router.post('/',async (req,res)=>{
@@ -55,17 +59,26 @@ router.post('/news/write', async(req,res)=>{
     await News({newsTxT:newsTxT,newsZag:newsZag}).save()
     res.redirect('/addNewsAdmin')
 })
-router.get('/someThink', function(req, res, next) {
-    if (req.session.views) {
-      req.session.views++
-      res.setHeader('Content-Type', 'text/html')
-      res.write('<p>views: ' + req.session.id + '</p>')
-      res.write('<p>expires in: ' + (req.session.cookie.maxAge / 1000) + 's</p>')
-      res.end()
-    } else {
-      
-      res.end('welcome to the session demo. refresh!')
-    }
-  })
-
+router.get('/logout',async(req,res) =>{
+    res.clearCookie('token')
+    res.redirect('/')
+})
+router.post('/Material/write',async(req,res) =>{
+    const {materialZag,materialTxT} = req.body
+    await  Material({materialZag:materialZag,materialTxT:materialTxT}).save()
+    res.redirect('/')
+})
+router.get('/material/get',async(req,res)=>{
+    let data = await Material.find({})
+    res.json(data)
+})
+router.post('/test/write',async(req,res)=>{
+    let {testName} = req.body
+    await Test({testName:testName}).save()
+    res.redirect('/')
+})
+router.get('/test/get',async(req,res)=>{
+    let data = await Test.find({})
+    res.json(data)
+})
 module.exports = router

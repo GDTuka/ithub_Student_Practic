@@ -1,12 +1,8 @@
 const {sign,verify} = require('jsonwebtoken')
-const decoder = require('jwt-decode')
-var JWTR =  require('jwt-redis')
-
-
-
+const {User,News} = require("./model/models");
 
 const createToken = (user) =>{
-    const accessToken = sign({mail:user.mail},"")
+    const accessToken = sign({mail:user.mail},"jwt-secret")
     return accessToken
 }
 const destroyToken = (req,res,next) =>{
@@ -30,15 +26,8 @@ const validateToken = (req,res,next) =>{
         }
     }
 }
-const getData = (req,res,next)=>{
-
-    const accessToken = req.cookies["token"] 
-    const validtoken = verify(accessToken,"jwt-secret")
-    var decoded = decoder(accessToken)
-    console.log(validtoken)
-    function getcookie (){
-        req.cookies["token"] = null
-    } 
+const getData = async (req,res,next)=>{
+    
     return next()
 }
 

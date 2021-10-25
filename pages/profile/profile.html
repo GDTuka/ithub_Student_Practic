@@ -4,16 +4,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/fotter.css">
-    <link rel="stylesheet" href="css/newsPage.css">
     <link rel="stylesheet" href="css/shapka.css">
-    <link rel="stylesheet" href="css/kval.css">
-        
-    <title>KvalPage</title>
+    <link rel="stylesheet" href="css/fotter.css">
+    <link rel="stylesheet" href="css/profile.css">
+    <title>Document</title>
 </head>
 <body>
-
-
     <div class="navShapka">
         <div class="Shapka">
             <div class="ShapkaTxT">
@@ -24,28 +20,26 @@
             </div>
         </div>
         <div class="navigation">
-            <div class="navObj navObj1"><a class="navA"   href="/kval">Квалификации</a></div>
+            <div class="navObj navObj1"><a href="/kval">Квалификации</a></div>
             <div class="navObj navObj2"><a href="/documents">Документы</a></div>
             <div class="navObj navObj3"><a href="/">Новости</a></div>
             <div class="navObj navObj4"><a href="/contacts">Контакты</a></div>
         </div>
     </div>
 
-   <div class="main">
+    <div class="main">
+        <div class="loginPol" id="login">
+            Логин:
+        </div>
+        <div class="emailPol" id="mail">
+            Email:
+        </div>
+        <div class="buttomExit">
+            <button class="btn btn-primary btn-block create-account" type="submit"><a href="/api/logout">Выход</a></button>
+        </div>
+    </div>
 
-    <div class="left" id="left">
-        <h1 class="h1Left">
-            Материалы для прохождения
-        </h1>
-        
-    </div>
-    <div class="right" id="right">
-        <h1 class="h1rigth">
-            Материалы для изучения
-        </h1>
-    </div>
-    
-   </div>
+
     <footer>
         <div>
                 <div class="fotterText">
@@ -83,8 +77,8 @@
 
         </div>
     </footer>
-    <script src="js/kval.js">
 
-    </script>
+    <script src="js/profile.js"></script>
+    
 </body>
 </html>

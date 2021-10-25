@@ -19,7 +19,7 @@
   },
   "devDependencies": {},
   "scripts": {
-    "watch": "nodemon ./index.js"
+    "start": "nodemon index.js"
   },
   "repository": {
     "type": "git",

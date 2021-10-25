@@ -1,8 +1,12 @@
 const singInDiv = document.getElementById("SingIn")
-function isSingIn(){
-    // Проверка на то вошёл пользователь или нет будет добавлена позже пока просто переход на страницу логина
-
-    singInDiv.innerHTML += "Войти"
-
+singInDiv.innerHTML += "войти"
+const takeUserLogin = async() =>{
+    let res = await fetch('/api/data')
+    userData = await res.json()
+    console.log(userData)
+    if(userData != null){
+        singInDiv.innerHTML = userData.login
+        singInDiv.setAttribute('href','/profile')
+    }
 }
-isSingIn()
+takeUserLogin()
