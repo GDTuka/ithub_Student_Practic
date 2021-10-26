@@ -18,7 +18,6 @@ app.use('/',require("./routes/routes"))
 app.use(express.static(__dirname +'/public'))
 app.use("/api", require('./data/api'))
 
-
 app.set('trust proxy', 1)
 app.listen(port,function(){
     console.log('server is alive')
