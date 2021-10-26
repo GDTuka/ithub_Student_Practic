@@ -23,7 +23,7 @@ router.post('/',async (req,res)=>{
     if(!isUserExist){
         console.log('Логин гавно')
     } else{
-         bcrypt.compare(password,UserPwdCorrect).then((match)=>{
+         bcrypt.compare(password,isUserExist.password).then((match)=>{
         if(!match){
             console.log("Пароль говно")
         } else{
