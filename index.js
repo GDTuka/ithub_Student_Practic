@@ -3,7 +3,7 @@ const app = express();
 var path = require('path');
 const parser = require('cookie-parser')
 const session = require('express-session')
-const port = 5000 || process.env.PORT;
+const port = process.env.PORT || 5000;
 
 app.use(session({
     secret: 'jwt-secret',
