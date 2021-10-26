@@ -15,8 +15,7 @@
     "jwt-decode": "^3.1.2",
     "jwt-redis": "^6.0.0",
     "mongodb": "^4.1.3",
-    "mongoose": "^6.0.11",
-    "heroku-postbuild": "npm run build"
+    "mongoose": "^6.0.11"
   },
   "devDependencies": {},
   "scripts": {
